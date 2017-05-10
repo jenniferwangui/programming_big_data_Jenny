@@ -40,9 +40,11 @@ print add ([47, 11, 42, 13])
 print min ([47, 11, 42, 13])
 
 celcius = [39.2, 36.7, 37.8]
-Fahrenheit = [((float)((9)]
+fahrenheit = [((float)((9) / 5)* x + 32) for x in celcius]
+print fahrenheit
 
 print max ([47, 11, 42, 13])	
+
 
 
 fahrenheit = to_fahrenheit(celcius)
