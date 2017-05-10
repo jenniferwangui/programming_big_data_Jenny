@@ -10,6 +10,10 @@ print reduce
 
 def add(values):
 	return reduce(lambda x, y: x + y, values)
+	
+def add(values):
+	return reduce(lambda x, y: x /float (y) if y!=0 else 'nan', values)	
+	
 
 def max(values):
 	return reduce(lambda a,b: a if (a>b) else b, values)
@@ -49,3 +53,17 @@ print max ([47, 11, 42, 13])
 
 fahrenheit = to_fahrenheit(celcius)
 print fahrenheit
+
+
+def pythagorean(n):
+	for x in range(1, n):
+		for y in range(x, n):
+			for z in range(y, n):
+				if x **2 + y **2 == z **2:
+					yield (x, y, z)
+					
+					
+pyt = pythagorean(30)
+for triplet in pyt:
+	print triplet
+	print sum(triplet)					
