@@ -23,7 +23,8 @@ class Changes:
         self.changes = changes
         self.comment = comment
     def get_commit_changes(self):
-        return self.day+"  .  "+ self.time+"  .  "+ self.date+ "  .  "+"  .  "  + self.author+ "  .  " + "  .  ".join(self.revision) 
+        return self.day+"  ,  "+ self.time+"  ,  "+ self.date+ "  ,  "+self.author+"  ,  "+str(self.comment_line_count)
+        
         
 changes = []
 current_changes = None
@@ -55,17 +56,16 @@ while True:
 print (details)
 print(len(changes))
 changes.reverse()
-#for index, changes in enumerate(changes):
-    #print(changes.get_commit_changes())
-    
+
+
+   
 textFileCsv = []
 for index, commit in enumerate(changes):
     testFile = []
     testFile.append(commit.get_commit_changes())
-    #listaInterna.append(len(commits))
     textFileCsv.append(testFile)
 
-with open("testFile2.csv", 'wb') as csvfile:
+with open("testFile.csv", 'wb') as csvfile:
     spamwriter = csv.writer(csvfile, delimiter=';', quoting=csv.QUOTE_MINIMAL)
     spamwriter.writerow([len(changes)])
     for line in textFileCsv:
